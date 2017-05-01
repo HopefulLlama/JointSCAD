@@ -37,6 +37,7 @@ See the [License](../master/LICENSE) document for more information on licensing.
 
 #### `bridleJointA(dimensions);`
 ![Bridle Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/bridleJoint/a.png)
+
 Creates the centre part, which rests in between the gap created by the two 'fingers' of its counterpart. 
 
 | Parameter	| Data Type | Description |
@@ -45,6 +46,7 @@ Creates the centre part, which rests in between the gap created by the two 'fing
 
 #### `bridleJointB(dimensions);`
 ![Bridle Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/bridleJoint/b.png)
+
 Creates the two 'fingers', which is intended to receive its counterpart.
 
 | Parameter	| Data Type | Description |
@@ -54,6 +56,7 @@ Creates the two 'fingers', which is intended to receive its counterpart.
 ## Dovetail Joint
 #### `dovetailJointA(dimensions, numberOfDovetails);`
 ![Dovetail Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/dovetailJoint/a.png)
+
 Creates the "dovetails", which rests in between the gaps created by its counterpart.
 
 | Parameter	| Data Type | Description |
@@ -63,6 +66,7 @@ Creates the "dovetails", which rests in between the gaps created by its counterp
 
 #### `dovetailJointB(dimensions, numberOfDovetails);`
 ![Dovetail Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/dovetailJoint/b.png)
+
 Creates a block with gaps designed to allow the specified number of dovetails to rest in.
 
 | Parameter	| Data Type | Description |
@@ -73,6 +77,7 @@ Creates a block with gaps designed to allow the specified number of dovetails to
 ## Dowel Joint
 #### `dowel(sides, radius, length);`
 ![Dowel](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/dowelJoint/dowel.png)
+
 Creates a dowel using a prism, instead of a cylinder. This is because:
 - cylinders are readily available from OpenSCAD
 - some 3D printers struggle to print round things exactly
@@ -89,6 +94,7 @@ Creates a dowel using a prism, instead of a cylinder. This is because:
 ## Finger Joint
 #### `fingerJointA(dimensions, fingerCount);`
 ![Finger Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/fingerJoint/a.png)
+
 Creates one set of "fingers", which are designed to rest in between another set of "fingers".
 
 | Parameter	| Data Type | Description |
@@ -98,6 +104,7 @@ Creates one set of "fingers", which are designed to rest in between another set 
 
 #### `fingerJointB(dimensions, fingerCount);`
 ![Finger Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/fingerJoint/b.png)
+
 Creates the other set of "fingers", which are designed to rest in between the initial set of "fingers".
 
 | Parameter	| Data Type | Description |
@@ -109,6 +116,7 @@ Creates the other set of "fingers", which are designed to rest in between the in
 ### Standard Mortise and Tenon Joint
 #### `mortise(dimensions, proportionsOfTenon);`
 ![Mortise](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/mortise.png)
+
 Creates a mortise, allowing space for a counterpart tenon to be inserted.
 
 | Parameter	| Data Type | Description |
@@ -118,6 +126,7 @@ Creates a mortise, allowing space for a counterpart tenon to be inserted.
 
 #### `tenon(dimensions, proportionsOfTenon);`
 ![Tenon](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/tenon.png)
+
 Creates a tenon, designed to be inserted into a matching mortise.
 
 | Parameter	| Data Type | Description |
@@ -128,6 +137,7 @@ Creates a tenon, designed to be inserted into a matching mortise.
 ### Pinned Mortise and Tenon Joint
 #### `pinnedMortise(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius);`
 ![Pinned Mortise](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/pinnedMortise.png)
+
 Creates a mortise, allowing space for a counterpart tenon to be inserted. In addition, this adds a respective amount of slots for pins to be inserted.
 
 | Parameter	| Data Type | Description |
@@ -140,6 +150,7 @@ Creates a mortise, allowing space for a counterpart tenon to be inserted. In add
 
 #### `pinnedTenon(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius);`
 ![Pinned Tenon](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/pinnedTenon.png)
+
 Creates a tenon, designed to be inserted into a matching mortise. In addition, this adds a respective amount of slots for pins to be inserted.
 
 | Parameter	| Data Type | Description |
@@ -153,6 +164,7 @@ Creates a tenon, designed to be inserted into a matching mortise. In addition, t
 ### Shouldered Mortise and Tenon Joint
 #### `shoulderedMortise(dimensions, proportionsOfTenon, proportionOfShoulder);`
 ![Shouldered Mortise](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/shoulderedMortise.png)
+
 Creates a mortise, allowing space for a counterpart tenon to be inserted. 
 In addition, adds two supporting shoulders for the tenon.
 
@@ -164,6 +176,7 @@ In addition, adds two supporting shoulders for the tenon.
 
 #### `shoulderedTenon(dimensions, proportionsOfTenon, proportionOfShoulder);`
 ![Shouldered Tenon](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/shoulderedTenon.png)
+
 Creates a tenon, designed to be inserted into a matching mortise. 
 In addition, adds two supporting shoulders for the tenon.
 
@@ -176,6 +189,7 @@ In addition, adds two supporting shoulders for the tenon.
 ## Scarf Joint
 #### `scarfJointA(dimensions);`
 ![Scarf Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/scarfJoint/a.png)
+
 Creates one half of a scarf joint. This half is the upper/left half of a scarf joint.
 
 | Parameter	| Data Type | Description |
@@ -184,6 +198,7 @@ Creates one half of a scarf joint. This half is the upper/left half of a scarf j
 
 #### `scarfJointB(dimensions);`
 ![Scarf Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/scarfJoint/b.png)
+
 Creates the other half of a scarf joint. This half is the lower/right half of a scarf joint.
 
 | Parameter	| Data Type | Description |
