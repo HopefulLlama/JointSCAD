@@ -156,7 +156,7 @@ Creates a tenon, designed to be inserted into a matching mortise. In addition, t
 | Parameter	| Data Type | Description |
 |---|---|---|
 | `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
-| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 | `numberOfDowels` | Number | The number of pins/dowels to be used in joint creation. These pins are evenly spread, vertically, along the centre of the joint. |
 | `dowelSides` | Number | The number of sides the polygon to be extruded should have, which is used to create the slot for each pin/dowel. |
 | `dowelRadius` | Number | The distance of each corner in the polygon, from its centre. |
@@ -183,7 +183,7 @@ In addition, adds two supporting shoulders for the tenon.
 | Parameter	| Data Type | Description |
 |---|---|---|
 | `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
-| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 | `proportionOfShoulder` | Number | The width of the shoulder, *in relation to the tenon,* rather than the entire joint. |
 
 ## Scarf Joint
