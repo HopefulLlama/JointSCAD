@@ -4,7 +4,6 @@ module createFingerJoints(dimensions, fingerCount, startingIndex, endingIndex) {
     z = dimensions[2];
     
     for(i=[startingIndex: 2: endingIndex]) {
-        echo(y/fingerCount * 2);
         translate([0, i * y, 0]) {
             cube([x, y, z]);
         }
