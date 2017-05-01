@@ -38,6 +38,6 @@ module dovetailJointA(dimensions, numberOfDovetails) {
 module dovetailJointB(dimensions, numberOfDovetails) {
     difference() {
         cube(dimensions);
-        dovetailAJoint(dimensions, numberOfDovetails);
+        dovetailJointA(dimensions, numberOfDovetails);
     }
 }
