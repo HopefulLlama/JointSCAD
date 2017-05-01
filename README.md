@@ -1,6 +1,11 @@
 # JointSCAD
 Joints made easy, with JointSCAD
 
+## What is JointSCAD?
+Often times 3D prints must be printed in parts. This might be due to unavoidable overhangs, or size limitations of the printer itself. Sometimes it is easier to paint individual parts which can be put together, and other times it is required in as part of an object in motion.
+
+JointSCAD aims to be a single stop OpenSCAD library for simple, parametric joint creation.
+
 # Contents
 - [Setup](#setup)
 - [Contributing](#contributing)
