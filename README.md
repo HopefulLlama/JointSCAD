@@ -35,20 +35,142 @@ See the [License](../master/LICENSE) document for more information on licensing.
 
 ## Bridle Joint
 
-### `bridleJointA(dimensions);`
+#### `bridleJointA(dimensions);`
+Creates the centre part, which rests in between the gap created by the two 'fingers' of its counterpart. 
 
-| Description | Creates the centre part, which rests in between the gap created by the two 'fingers' of its counterpart. |
-|---|---|
-| Parameters 	| - `dimensions`: An array/vector of three integers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
-### `bridleJointB(dimensions);`
+#### `bridleJointB(dimensions);`
+Creates the two 'fingers', which is intended to receive its counterpart.
 
-| Description | Creates the two 'fingers', which is intended to receive its counterpart. |
-|---|---|
-| Parameters 	| - `dimensions`: An array/vector of three integers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
 ## Dovetail Joint
+#### `dovetailJointA(dimensions, numberOfDovetails)`
+Creates the "dovetails", which rests in between the gaps created by its counterpart.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `numberOfDovetails` | Number | A number which specifies the number of dovetails to use in the joint. This should be the same when used with its counterpart to ensure correct sizing. |
+
+#### `dovetailJointB(dimensions, numberOfDovetails)`
+Creates a block with gaps designed to allow the specified number of dovetails to rest in.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `numberOfDovetails` | Number | A number which specifies the number of dovetails to use in the joint. This should be the same when used with its counterpart to ensure correct sizing. |
+
 ## Dowel Joint
+#### `dowel(sides, radius, length)`
+Creates a dowel using a prism, instead of a cylinder. This is because:
+- cylinders are readily available from OpenSCAD
+- some 3D printers struggle to print round things exactly
+- sometimes a prism is preferable
+
+| Parameter | Data Type | Description |
+|---|---|---|
+| `sides` | Number | Specifies the number of sides the polygon should have. This polygon is extruded to create the prism. |
+| `radius` | Number | The distance from the centre point to place each corner of the polygon. | 
+| `length` | Number | The length of the extruded prism | 
+
+*Note:* Dowel does not have a counterpart. If the counterpart hole is required, use [difference()](https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#difference). 
+
 ## Finger Joint
+#### `fingerJointA(dimensions, fingerCount)`
+Creates one set of "fingers", which are designed to rest in between another set of "fingers".
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `fingerCount` | Number | A number which specifies the number of fingers to use in the joint. This should be the same when used with its counterpart to ensure correct sizing. |
+
+#### `fingerJointB(dimensions, fingerCount)`
+Creates the other set of "fingers", which are designed to rest in between the initial set of "fingers".
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `fingerCount` | Number | A number which specifies the number of fingers to use in the joint. This should be the same when used with its counterpart to ensure correct sizing. |
+
 ## Mortise And Tenon Joint
+### Standard Mortise and Tenon Joint
+#### `mortise(dimensions, proportionsOfTenon)`
+Creates a mortise, allowing space for a counterpart tenon to be inserted.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+
+#### `tenon(dimensions, proportionsOfTenon)`
+Creates a tenon, designed to be inserted into a matching mortise.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+
+### Pinned Mortise and Tenon Joint
+#### `pinnedMortise(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius)`
+Creates a mortise, allowing space for a counterpart tenon to be inserted. In addition, this adds a respective amount of slots for pins to be inserted.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `numberOfDowels` | Number | The number of pins/dowels to be used in joint creation. These pins are evenly spread, vertically, along the centre of the joint. |
+| `dowelSides` | Number | The number of sides the polygon to be extruded should have, which is used to create the slot for each pin/dowel. |
+| `dowelRadius` | Number | The distance of each corner in the polygon, from its centre. |
+
+#### `pinnedTenon(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius)`
+Creates a tenon, designed to be inserted into a matching mortise. In addition, this adds a respective amount of slots for pins to be inserted.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `numberOfDowels` | Number | The number of pins/dowels to be used in joint creation. These pins are evenly spread, vertically, along the centre of the joint. |
+| `dowelSides` | Number | The number of sides the polygon to be extruded should have, which is used to create the slot for each pin/dowel. |
+| `dowelRadius` | Number | The distance of each corner in the polygon, from its centre. |
+
+### Shouldered Mortise and Tenon Joint
+#### `shoulderedMortise(dimensions, proportionsOfTenon, proportionOfShoulder)`
+Creates a mortise, allowing space for a counterpart tenon to be inserted. 
+In addition, adds two supporting shoulders for the tenon.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionOfShoulder` | Number | The width of the shoulder, *in relation to the tenon,* rather than the entire joint. |
+
+#### `pinnedTenon(dimensions, proportionsOfTenon, proportionOfShoulder)`
+Creates a tenon, designed to be inserted into a matching mortise. 
+In addition, adds two supporting shoulders for the tenon.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+| `proportionOfShoulder` | Number | The width of the shoulder, *in relation to the tenon,* rather than the entire joint. |
+
 ## Scarf Joint
+#### `scarfJointA(dimensions)`
+Creates one half of a scarf joint. This half is the upper/left half of a scarf joint.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
+
+#### `scarfJointB(dimensions)`
+Creates the other half of a scarf joint. This half is the lower/right half of a scarf joint.
+
+| Parameter	| Data Type | Description |
+|---|---|---|
+| `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
