@@ -15,5 +15,5 @@ module fingerJointA(dimensions, fingerCount) {
 }
 
 module fingerJointB(dimensions, fingerCount) {
-    createFingerJoints(dimensions, fingerCount, 1, (fingerCount) * 2);
+    createFingerJoints(dimensions, fingerCount, 1, (fingerCount - 1) * 2);
 }
