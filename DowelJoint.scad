@@ -5,7 +5,7 @@ function getCorners(sides, radius) = [
         radius * cos(i/sides*360)
     ]
 ];
-module dowelJoint(sides, radius, length) {
+module dowel(sides, radius, length) {
     linear_extrude(height = length) {
         polygon(getCorners(sides, radius));
     }

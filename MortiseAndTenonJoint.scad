@@ -69,7 +69,7 @@ module pins(dimensions, numberOfDowels, dowelSides, dowelRadius) {
     for(t=translations) {
         translate(t) {
             rotate([90, 0, 0]) {
-                dowelJoint(dowelSides, dowelRadius, dimensions[1]);
+                dowel(dowelSides, dowelRadius, dimensions[1]);
             }
         }
     }
