@@ -26,21 +26,25 @@ See the [License](../master/LICENSE) document for more information on licensing.
 
 # API
 ## API Contents
-- [Bridle Joint](#Bridle Joint)
-- [Dovetail Joint](#Dovetail Joint)
-- [Dowel Joint](#Dowel Joint)
-- [Finger Joint](#Finger Joint)
-- [Mortise And Tenon Joint](#Mortise And Tenon Joint)
-- [Scarf Joint](#Scarf Joint)
+- [Bridle Joint](#bridle)
+- [Dovetail Joint](#dovetail)
+- [Dowel Joint](#dowel)
+- [Finger Joint](#finger)
+- [Mortise And Tenon Joint](#mortise)
+- [Scarf Joint](#scarf)
 
 ## Bridle Joint
 
-###`bridleJointA(dimensions);`
+### `bridleJointA(dimensions);`
+
 | Description | Creates the centre part, which rests in between the gap created by the two 'fingers' of its counterpart. |
+|---|---|
 | Parameters 	| - `dimensions`: An array/vector of three integers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
-###`bridleJointA(dimensions);`
+### `bridleJointA(dimensions);`
+
 | Description | Creates the two 'fingers', which is intended to receive its counterpart. |
+|---|---|
 | Parameters 	| - `dimensions`: An array/vector of three integers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
 ## Dovetail Joint
