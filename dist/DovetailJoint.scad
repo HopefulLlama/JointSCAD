@@ -20,7 +20,7 @@ module dovetail(dimensions) {
     }
 }
 
-module dovetailAJoint(dimensions, numberOfDovetails) {
+module dovetailJointA(dimensions, numberOfDovetails) {
     width = dimensions[0];
     length = dimensions[1];
     height = dimensions[2];
@@ -35,7 +35,7 @@ module dovetailAJoint(dimensions, numberOfDovetails) {
     }
 }
 
-module dovetailBJoint(dimensions, numberOfDovetails) {
+module dovetailJointB(dimensions, numberOfDovetails) {
     difference() {
         cube(dimensions);
         dovetailAJoint(dimensions, numberOfDovetails);

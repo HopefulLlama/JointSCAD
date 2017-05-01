@@ -6,13 +6,14 @@ module getMiddlePart(dimensions) {
         cube([x, y/3, z]);
     }
 }
-module bridleJointFemale(dimensions) {
+
+module bridleJointA(dimensions) {
+    getMiddlePart(dimensions);
+}
+
+module bridleJointB(dimensions) {
     difference() {
         cube(dimensions);
         getMiddlePart(dimensions);
     }
-}
-
-module bridleJointMale(dimensions) {
-    getMiddlePart(dimensions);
 }

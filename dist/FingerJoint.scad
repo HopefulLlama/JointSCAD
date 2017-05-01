@@ -10,10 +10,10 @@ module createFingerJoints(dimensions, fingerCount, startingIndex, endingIndex) {
     }
 }
 
-module fingerJointMale(dimensions, fingerCount) {
+module fingerJointA(dimensions, fingerCount) {
     createFingerJoints(dimensions, fingerCount, 0, (fingerCount - 1) * 2);
 }
 
-module fingerJointFemale(dimensions, fingerCount) {
+module fingerJointB(dimensions, fingerCount) {
     createFingerJoints(dimensions, fingerCount, 1, (fingerCount) * 2);
 }
