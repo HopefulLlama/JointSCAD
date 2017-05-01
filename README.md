@@ -26,12 +26,12 @@ See the [License](../master/LICENSE) document for more information on licensing.
 
 # API
 ## API Contents
-- [Bridle Joint](#bridle)
-- [Dovetail Joint](#dovetail)
-- [Dowel Joint](#dowel)
-- [Finger Joint](#finger)
-- [Mortise And Tenon Joint](#mortise)
-- [Scarf Joint](#scarf)
+- [Bridle Joint](#bridle-joint)
+- [Dovetail Joint](#dovetail-joint)
+- [Dowel Joint](#dowel-joint)
+- [Finger Joint](#finger-joint)
+- [Mortise And Tenon Joint](#mortise-and-tenon-joint)
+- [Scarf Joint](#scarf-joint)
 
 ## Bridle Joint
 
