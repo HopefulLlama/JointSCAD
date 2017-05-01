@@ -41,7 +41,7 @@ See the [License](../master/LICENSE) document for more information on licensing.
 |---|---|
 | Parameters 	| - `dimensions`: An array/vector of three integers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
-### `bridleJointA(dimensions);`
+### `bridleJointB(dimensions);`
 
 | Description | Creates the two 'fingers', which is intended to receive its counterpart. |
 |---|---|
