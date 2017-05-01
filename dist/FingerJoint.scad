@@ -1,10 +1,10 @@
 module createFingerJoints(dimensions, fingerCount, startingIndex, endingIndex) {
-    x = dimensions[0];
-    y = dimensions[1]/ (fingerCount*2);
+    x = dimensions[0] / (fingerCount*2);
+    y = dimensions[1];
     z = dimensions[2];
     
     for(i=[startingIndex: 2: endingIndex]) {
-        translate([0, i * y, 0]) {
+        translate([i * x, 0, 0]) {
             cube([x, y, z]);
         }
     }
