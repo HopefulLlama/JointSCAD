@@ -1,3 +1,5 @@
+use <DowelJoint.scad>;
+
 function getShoulderCorners(dimensions) = [
     [0, 0, 0],
     [dimensions[0], 0, 0],
@@ -40,6 +42,38 @@ module tenon(dimensions, proportionsOfTenon) {
     }
 }
 
+module pinnedMortise(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius) {
+    difference() {
+        mortise(dimensions, proportionsOfTenon);
+        pins(dimensions, numberOfDowels, dowelSides, dowelRadius);
+    }
+}
+
+module pinnedTenon(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius) {
+    difference() {
+        tenon(dimensions, proportionsOfTenon);
+        pins(dimensions, numberOfDowels, dowelSides, dowelRadius);
+    }
+}
+
+module pins(dimensions, numberOfDowels, dowelSides, dowelRadius) {
+    translations = [
+        for(i=[1: numberOfDowels])
+            [
+                dimensions[0]/2,
+                dimensions[1],
+                (dimensions[2]/(numberOfDowels+1) * i)
+            ]
+    ];
+   
+    for(t=translations) {
+        translate(t) {
+            rotate([90, 0, 0]) {
+                dowelJoint(dowelSides, dowelRadius, dimensions[1]);
+            }
+        }
+    }
+}
 
 module shoulder(dimensions) {
     corners = getShoulderCorners(dimensions);
