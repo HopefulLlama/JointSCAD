@@ -36,6 +36,7 @@ See the [License](../master/LICENSE) document for more information on licensing.
 ## Bridle Joint
 
 #### `bridleJointA(dimensions);`
+![Bridle Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/bridleJoint/a.png)
 Creates the centre part, which rests in between the gap created by the two 'fingers' of its counterpart. 
 
 | Parameter	| Data Type | Description |
@@ -43,6 +44,7 @@ Creates the centre part, which rests in between the gap created by the two 'fing
 | `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
 #### `bridleJointB(dimensions);`
+![Bridle Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/bridleJoint/b.png)
 Creates the two 'fingers', which is intended to receive its counterpart.
 
 | Parameter	| Data Type | Description |
@@ -51,6 +53,7 @@ Creates the two 'fingers', which is intended to receive its counterpart.
 
 ## Dovetail Joint
 #### `dovetailJointA(dimensions, numberOfDovetails);`
+![Dovetail Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/dovetailJoint/a.png)
 Creates the "dovetails", which rests in between the gaps created by its counterpart.
 
 | Parameter	| Data Type | Description |
@@ -59,6 +62,7 @@ Creates the "dovetails", which rests in between the gaps created by its counterp
 | `numberOfDovetails` | Number | A number which specifies the number of dovetails to use in the joint. This should be the same when used with its counterpart to ensure correct sizing. |
 
 #### `dovetailJointB(dimensions, numberOfDovetails);`
+![Dovetail Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/dovetailJoint/b.png)
 Creates a block with gaps designed to allow the specified number of dovetails to rest in.
 
 | Parameter	| Data Type | Description |
@@ -68,6 +72,7 @@ Creates a block with gaps designed to allow the specified number of dovetails to
 
 ## Dowel Joint
 #### `dowel(sides, radius, length);`
+![Dowel](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/dowelJoint/dowel.png)
 Creates a dowel using a prism, instead of a cylinder. This is because:
 - cylinders are readily available from OpenSCAD
 - some 3D printers struggle to print round things exactly
@@ -83,6 +88,7 @@ Creates a dowel using a prism, instead of a cylinder. This is because:
 
 ## Finger Joint
 #### `fingerJointA(dimensions, fingerCount);`
+![Finger Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/fingerJoint/a.png)
 Creates one set of "fingers", which are designed to rest in between another set of "fingers".
 
 | Parameter	| Data Type | Description |
@@ -91,6 +97,7 @@ Creates one set of "fingers", which are designed to rest in between another set 
 | `fingerCount` | Number | A number which specifies the number of fingers to use in the joint. This should be the same when used with its counterpart to ensure correct sizing. |
 
 #### `fingerJointB(dimensions, fingerCount);`
+![Finger Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/fingerJoint/b.png)
 Creates the other set of "fingers", which are designed to rest in between the initial set of "fingers".
 
 | Parameter	| Data Type | Description |
@@ -101,6 +108,7 @@ Creates the other set of "fingers", which are designed to rest in between the in
 ## Mortise And Tenon Joint
 ### Standard Mortise and Tenon Joint
 #### `mortise(dimensions, proportionsOfTenon);`
+![Mortise](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/mortise.png)
 Creates a mortise, allowing space for a counterpart tenon to be inserted.
 
 | Parameter	| Data Type | Description |
@@ -109,6 +117,7 @@ Creates a mortise, allowing space for a counterpart tenon to be inserted.
 | `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
 #### `tenon(dimensions, proportionsOfTenon);`
+![Tenon](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/tenon.png)
 Creates a tenon, designed to be inserted into a matching mortise.
 
 | Parameter	| Data Type | Description |
@@ -118,6 +127,7 @@ Creates a tenon, designed to be inserted into a matching mortise.
 
 ### Pinned Mortise and Tenon Joint
 #### `pinnedMortise(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius);`
+![Pinned Mortise](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/pinnedMortise.png)
 Creates a mortise, allowing space for a counterpart tenon to be inserted. In addition, this adds a respective amount of slots for pins to be inserted.
 
 | Parameter	| Data Type | Description |
@@ -129,6 +139,7 @@ Creates a mortise, allowing space for a counterpart tenon to be inserted. In add
 | `dowelRadius` | Number | The distance of each corner in the polygon, from its centre. |
 
 #### `pinnedTenon(dimensions, proportionsOfTenon, numberOfDowels, dowelSides, dowelRadius);`
+![Pinned Tenon](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/pinnedTenon.png)
 Creates a tenon, designed to be inserted into a matching mortise. In addition, this adds a respective amount of slots for pins to be inserted.
 
 | Parameter	| Data Type | Description |
@@ -141,6 +152,7 @@ Creates a tenon, designed to be inserted into a matching mortise. In addition, t
 
 ### Shouldered Mortise and Tenon Joint
 #### `shoulderedMortise(dimensions, proportionsOfTenon, proportionOfShoulder);`
+![Shouldered Mortise](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/shoulderedMortise.png)
 Creates a mortise, allowing space for a counterpart tenon to be inserted. 
 In addition, adds two supporting shoulders for the tenon.
 
@@ -150,7 +162,8 @@ In addition, adds two supporting shoulders for the tenon.
 | `proportionsOfTenon` | Number[3] | An array/vector of three numbers, which describes *proportions* of the `[x, y, z]` dimensions of the *tenon slot* respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 | `proportionOfShoulder` | Number | The width of the shoulder, *in relation to the tenon,* rather than the entire joint. |
 
-#### `pinnedTenon(dimensions, proportionsOfTenon, proportionOfShoulder);`
+#### `shoulderedTenon(dimensions, proportionsOfTenon, proportionOfShoulder);`
+![Shouldered Tenon](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/mortiseAndTenonJoint/shoulderedTenon.png)
 Creates a tenon, designed to be inserted into a matching mortise. 
 In addition, adds two supporting shoulders for the tenon.
 
@@ -162,6 +175,7 @@ In addition, adds two supporting shoulders for the tenon.
 
 ## Scarf Joint
 #### `scarfJointA(dimensions);`
+![Scarf Joint A](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/scarfJoint/a.png)
 Creates one half of a scarf joint. This half is the upper/left half of a scarf joint.
 
 | Parameter	| Data Type | Description |
@@ -169,6 +183,7 @@ Creates one half of a scarf joint. This half is the upper/left half of a scarf j
 | `dimensions` | Number[3] | An array/vector of three numbers, which describes the `[x, y, z]` dimensions of the joint respectively. This should be the same when used with its counterpart to ensure correct sizing. |
 
 #### `scarfJointB(dimensions);`
+![Scarf Joint B](https://raw.githubusercontent.com/HopefulLlama/JointSCAD/master/docs/scarfJoint/b.png)
 Creates the other half of a scarf joint. This half is the lower/right half of a scarf joint.
 
 | Parameter	| Data Type | Description |
